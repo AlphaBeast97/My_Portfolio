@@ -515,9 +515,9 @@ cowsay            # Classic cowsay
 
 1. **Color scheme preference?** (Classic green)
 2. **Sound effects?** (No - typing sounds)
-3. **Boot sequence?** (Fake Linux boot or skip?)
-4. **Mobile priority?** (Must work perfectly or desktop-first?)
-5. **API keys needed?** (Weather API registration)
+3. **Boot sequence?** (skip)
+4. **Mobile priority?** (desktop-first)
+5. **API keys needed?** (were gonna focus first on other things then api and its stuff comes last)
 6. **Content ready?** (Projects to showcase, bio text)
 
 ---
