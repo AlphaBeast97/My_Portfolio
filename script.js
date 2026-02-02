@@ -25,19 +25,17 @@ window.addEventListener("DOMContentLoaded", () => {
 // ===== WELCOME BANNER =====
 function showWelcomeBanner() {
   const banner = `
-<span style="color: #61afef;">╔══════════════════════════════════════════════════════════╗</span>
-<span style="color: #61afef;">║</span>   <span style="color: #00ff00; font-weight: bold;">███████╗ █████╗  █████╗ ██████╗</span>                      <span style="color: #61afef;">║</span>
-<span style="color: #61afef;">║</span>   <span style="color: #00ff00; font-weight: bold;">██╔════╝██╔══██╗██╔══██╗██╔══██╗</span>                     <span style="color: #61afef;">║</span>
-<span style="color: #61afef;">║</span>   <span style="color: #00ff00; font-weight: bold;">███████╗███████║███████║██║  ██║</span>                     <span style="color: #61afef;">║</span>
-<span style="color: #61afef;">║</span>   <span style="color: #00ff00; font-weight: bold;">╚════██║██╔══██║██╔══██║██║  ██║</span>                     <span style="color: #61afef;">║</span>
-<span style="color: #61afef;">║</span>   <span style="color: #00ff00; font-weight: bold;">███████║██║  ██║██║  ██║██████╔╝</span>                     <span style="color: #61afef;">║</span>
-<span style="color: #61afef;">║</span>   <span style="color: #00ff00; font-weight: bold;">╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝</span>                      <span style="color: #61afef;">║</span>
-<span style="color: #61afef;">║</span>                                                          <span style="color: #61afef;">║</span>
-<span style="color: #61afef;">║</span>   <span style="color: #ffff00;">Welcome to my Terminal-Based Portfolio!</span>                <span style="color: #61afef;">║</span>
-<span style="color: #61afef;">║</span>   Type <span style="color: #98c379;">'help'</span> to see available commands                  <span style="color: #61afef;">║</span>
-<span style="color: #61afef;">║</span>   Type <span style="color: #98c379;">'ls'</span> to explore sections                          <span style="color: #61afef;">║</span>
-<span style="color: #61afef;">║</span>                                                          <span style="color: #61afef;">║</span>
-<span style="color: #61afef;">╚══════════════════════════════════════════════════════════╝</span>
+<span style="color: #00ff00; font-weight: bold; font-size: 1.2em;">════════════════════════════════════════════════════</span>
+
+<span style="color: #ffff00; font-weight: bold;">  Welcome to Muhammad Saad Khan's Portfolio</span>
+
+<span style="color: #00ff00; font-weight: bold; font-size: 1.2em;">════════════════════════════════════════════════════</span>
+
+  <span style="color: #61afef;">→</span> Type <span style="color: #98c379;">'help'</span> to see available commands
+  <span style="color: #61afef;">→</span> Type <span style="color: #98c379;">'ls'</span> to explore sections
+  <span style="color: #61afef;">→</span> Type <span style="color: #98c379;">'cd &lt;section&gt;'</span> to navigate
+
+<span style="color: #00ff00; font-weight: bold; font-size: 1.2em;">════════════════════════════════════════════════════</span>
   `;
   terminal.output.innerHTML = banner;
 }
