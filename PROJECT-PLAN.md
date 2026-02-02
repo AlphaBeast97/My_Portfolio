@@ -109,7 +109,7 @@ PAGE CHANGES → Shows project1 details page
 - ❌ `cat` command (not needed - pages display themselves)
 - ~~❌ Command history (↑↓) - nice but not essential~~ ✅ **ADDED** - Now supports ↑↓ navigation
 - ~~❌ Autocomplete~~ ✅ **ADDED** - Tab autocomplete working
-- ~~❌ APIs (weather, quotes) - not core~~ ✅ **ADDED** - 6 API commands (weather, quote, joke, fact, crypto, github)
+- ~~❌ APIs (weather, quotes) - not core~~ ✅ **ADDED** - 5 API commands (weather, joke, fact, crypto, github)
 - ~~❌ Boot sequence - pure polish~~ ✅ **ADDED** - Animated boot sequence on first load
 
 ---
@@ -169,7 +169,6 @@ PAGE CHANGES → Shows project1 details page
 **API Easter Eggs (~2 hours):**
 
 - [✅] `weather` - Live weather for Lahore (Open-Meteo API)
-- [✅] `quote` - Random inspirational quotes (Quotable API)
 - [✅] `joke` - Programming jokes with delayed punchlines
 - [✅] `fact` - Random interesting facts
 - [✅] `crypto` - Bitcoin & Ethereum prices (CoinGecko API)
@@ -254,14 +253,14 @@ PAGE CHANGES → Shows project1 details page
 
 ### API Easter Eggs (Bonus):
 
-| Command   | Description                  | API Used          |
-| --------- | ---------------------------- | ----------------- |
-| `weather` | Weather in Lahore            | Open-Meteo        |
-| `quote`   | Inspirational quote          | Quotable          |
-| `joke`    | Programming joke             | Official Joke API |
-| `fact`    | Random fact                  | Useless Facts API |
-| `crypto`  | Bitcoin/Ethereum prices      | CoinGecko         |
-| `github`  | GitHub stats (@AlphaBeast97) | GitHub API        |
+| Command   | Description       | API Used   |
+| --------- | ----------------- | ---------- |
+| `weather` | Weather in Lahore | Open-Meteo |
+
+| `joke` | Programming joke | Official Joke API |
+| `fact` | Random fact | Useless Facts API |
+| `crypto` | Bitcoin/Ethereum prices | CoinGecko |
+| `github` | GitHub stats (@AlphaBeast97) | GitHub API |
 
 **That's it.** 6 commands = fully navigable portfolio.
 
@@ -451,7 +450,7 @@ saad@portfolio:~/projects$ cd ..
 ✅ **Sound effects:** No  
 ~~✅ **Boot sequence:** Skip (save time)~~ ✅ **ADDED** - Animated boot on first load  
 ✅ **Mobile:** Desktop-first (mobile nice-to-have)  
-~~✅ **APIs:** Skip for now (can add later)~~ ✅ **ADDED** - 6 API commands  
+~~✅ **APIs:** Skip for now (can add later)~~ ✅ **ADDED** - 5 API commands  
 ✅ **Timeline:** 6-8 hours MVP + 3 hours polish = **~10 hours total**
 ✅ **Command history/autocomplete:** ✅ **ADDED**  
 ✅ **File optimization:** ✅ **ADDED** - Modular structure with dynamic loading
@@ -533,7 +532,7 @@ saad@portfolio:~/projects$ cd ..
 - ✅ Modular file structure
 - ✅ Boot sequence animation
 - ✅ Command history (↑↓) & Tab autocomplete
-- ✅ 6 API-powered easter egg commands
+- ✅ 5 API-powered easter egg commands
 - ✅ Visual feedback (auto-scroll + flash animation)
 - ✅ Real project data from GitHub & resume
 

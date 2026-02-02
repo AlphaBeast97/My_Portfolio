@@ -250,9 +250,6 @@ const commands = {
       '  <span class="folder">weather</span>      - Current weather in Lahore',
     );
     terminal.print(
-      '  <span class="folder">quote</span>        - Random inspirational quote',
-    );
-    terminal.print(
       '  <span class="folder">joke</span>         - Random programming joke',
     );
     terminal.print(
@@ -385,20 +382,6 @@ const commands = {
       terminal.print("");
     } catch (error) {
       terminal.print("Failed to fetch weather data", "error");
-    }
-  },
-
-  async quote() {
-    terminal.print("Loading inspirational quote...", "info");
-    try {
-      const response = await fetch("https://api.quotable.io/random");
-      const data = await response.json();
-      terminal.print("");
-      terminal.print(`<span class="success">💭 "${data.content}"</span>`);
-      terminal.print(`   — ${data.author}`);
-      terminal.print("");
-    } catch (error) {
-      terminal.print("Failed to fetch quote", "error");
     }
   },
 
