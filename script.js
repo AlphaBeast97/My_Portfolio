@@ -1,3 +1,24 @@
+// ===== BOOT SEQUENCE =====
+window.addEventListener("DOMContentLoaded", () => {
+  const hasBooted = sessionStorage.getItem("hasBooted");
+  const bootScreen = document.getElementById("boot-screen");
+
+  if (!hasBooted) {
+    // Show boot sequence for 3.5 seconds
+    setTimeout(() => {
+      bootScreen.classList.add("hidden");
+      sessionStorage.setItem("hasBooted", "true");
+      // Focus terminal after boot
+      setTimeout(() => {
+        terminal.input.focus();
+      }, 500);
+    }, 3500);
+  } else {
+    // Skip boot if already booted this session
+    bootScreen.classList.add("hidden");
+  }
+});
+
 // ===== STATE MANAGEMENT =====
 let currentPath = ["~"];
 let commandHistory = [];
@@ -207,6 +228,7 @@ const commands = {
   help() {
     terminal.print("Available commands:", "info");
     terminal.print("");
+    terminal.print("<span class='success'>Navigation:</span>");
     terminal.print(
       '  <span class="folder">ls</span>           - List available pages/sections',
     );
@@ -222,8 +244,25 @@ const commands = {
     terminal.print(
       '  <span class="folder">clear</span>        - Clear terminal output',
     );
+    terminal.print("");
+    terminal.print("<span class='success'>Easter Eggs (API Powered):</span>");
     terminal.print(
-      '  <span class="folder">help</span>         - Show this help message',
+      '  <span class="folder">weather</span>      - Current weather in Lahore',
+    );
+    terminal.print(
+      '  <span class="folder">quote</span>        - Random inspirational quote',
+    );
+    terminal.print(
+      '  <span class="folder">joke</span>         - Random programming joke',
+    );
+    terminal.print(
+      '  <span class="folder">fact</span>         - Random interesting fact',
+    );
+    terminal.print(
+      '  <span class="folder">crypto</span>       - Bitcoin & Ethereum prices',
+    );
+    terminal.print(
+      '  <span class="folder">github</span>       - My GitHub statistics',
     );
     terminal.print("");
     terminal.print(
@@ -328,6 +367,111 @@ const commands = {
   echo(args) {
     terminal.print(args.join(" "));
   },
+
+  // API Easter Eggs
+  async weather() {
+    terminal.print("Fetching weather for Lahore...", "info");
+    try {
+      const response = await fetch(
+        "https://api.open-meteo.com/v1/forecast?latitude=31.5204&longitude=74.3587&current_weather=true",
+      );
+      const data = await response.json();
+      const weather = data.current_weather;
+      terminal.print("");
+      terminal.print(`<span class="success">🌤️  Weather in Lahore</span>`);
+      terminal.print(`   Temperature: ${weather.temperature}°C`);
+      terminal.print(`   Wind Speed: ${weather.windspeed} km/h`);
+      terminal.print(`   Time: ${new Date(weather.time).toLocaleString()}`);
+      terminal.print("");
+    } catch (error) {
+      terminal.print("Failed to fetch weather data", "error");
+    }
+  },
+
+  async quote() {
+    terminal.print("Loading inspirational quote...", "info");
+    try {
+      const response = await fetch("https://api.quotable.io/random");
+      const data = await response.json();
+      terminal.print("");
+      terminal.print(`<span class="success">💭 "${data.content}"</span>`);
+      terminal.print(`   — ${data.author}`);
+      terminal.print("");
+    } catch (error) {
+      terminal.print("Failed to fetch quote", "error");
+    }
+  },
+
+  async joke() {
+    terminal.print("Loading programming joke...", "info");
+    try {
+      const response = await fetch(
+        "https://official-joke-api.appspot.com/jokes/programming/random",
+      );
+      const data = await response.json();
+      const joke = data[0];
+      terminal.print("");
+      terminal.print(`<span class="success">😄 ${joke.setup}</span>`);
+      setTimeout(() => {
+        terminal.print(`   ${joke.punchline}`, "info");
+        terminal.print("");
+      }, 1000);
+    } catch (error) {
+      terminal.print("Failed to fetch joke", "error");
+    }
+  },
+
+  async fact() {
+    terminal.print("Loading random fact...", "info");
+    try {
+      const response = await fetch(
+        "https://uselessfacts.jsph.pl/random.json?language=en",
+      );
+      const data = await response.json();
+      terminal.print("");
+      terminal.print(`<span class="success">💡 ${data.text}</span>`);
+      terminal.print("");
+    } catch (error) {
+      terminal.print("Failed to fetch fact", "error");
+    }
+  },
+
+  async crypto() {
+    terminal.print("Fetching crypto prices...", "info");
+    try {
+      const response = await fetch(
+        "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd",
+      );
+      const data = await response.json();
+      terminal.print("");
+      terminal.print(`<span class="success">💰 Cryptocurrency Prices</span>`);
+      terminal.print(`   Bitcoin: $${data.bitcoin.usd.toLocaleString()}`);
+      terminal.print(`   Ethereum: $${data.ethereum.usd.toLocaleString()}`);
+      terminal.print("");
+    } catch (error) {
+      terminal.print("Failed to fetch crypto prices", "error");
+    }
+  },
+
+  async github() {
+    terminal.print("Fetching GitHub stats...", "info");
+    try {
+      const response = await fetch("https://api.github.com/users/AlphaBeast97");
+      const data = await response.json();
+      terminal.print("");
+      terminal.print(
+        `<span class="success">🐙 GitHub Stats - @${data.login}</span>`,
+      );
+      terminal.print(`   Name: ${data.name}`);
+      terminal.print(`   Public Repos: ${data.public_repos}`);
+      terminal.print(`   Followers: ${data.followers}`);
+      terminal.print(`   Following: ${data.following}`);
+      terminal.print(`   Bio: ${data.bio || "No bio"}`);
+      terminal.print("");
+    } catch (error) {
+      terminal.print("Failed to fetch GitHub stats", "error");
+    }
+  },
 };
 
 // ===== COMMAND HANDLER =====
@@ -350,9 +494,15 @@ function handleCommand(input) {
   const cmd = parts[0].toLowerCase();
   const args = parts.slice(1);
 
-  // Execute command
+  // Execute command (support async)
   if (commands[cmd]) {
-    commands[cmd](args);
+    const result = commands[cmd](args);
+    // Handle async commands
+    if (result instanceof Promise) {
+      result.catch((err) => {
+        terminal.print(`Command error: ${err.message}`, "error");
+      });
+    }
   } else {
     terminal.print(`Command not found: ${cmd}`, "error");
     terminal.print(
