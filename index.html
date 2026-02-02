@@ -1,318 +1,400 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Saad's Portfolio | Terminal</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <!-- Page Content Area (changes based on navigation) -->
     <div id="content-area">
-        <!-- Home Page (default) -->
-        <div id="home-page" class="page active">
-            <div class="page-container">
-                <h1 class="glitch">SAAD'S PORTFOLIO</h1>
-                <p class="subtitle">Web Developer | Terminal Enthusiast</p>
-                <div class="intro">
-                    <p>Welcome to my terminal-based portfolio.</p>
-                    <p>Use the terminal below to navigate.</p>
-                    <p class="hint">Type <span class="command-hint">help</span> to get started</p>
-                </div>
-            </div>
+      <!-- Home Page (default) -->
+      <div id="home-page" class="page active">
+        <div class="page-container">
+          <h1 class="glitch">SAAD'S PORTFOLIO</h1>
+          <p class="subtitle">Web Developer | Terminal Enthusiast</p>
+          <div class="intro">
+            <p>Welcome to my terminal-based portfolio.</p>
+            <p>Use the terminal below to navigate.</p>
+            <p class="hint">
+              Type <span class="command-hint">help</span> to get started
+            </p>
+          </div>
         </div>
+      </div>
 
-        <!-- About Page -->
-        <div id="about-page" class="page">
-            <div class="page-container">
-                <h1>About Me</h1>
-                <div class="content">
-                    <div class="profile-section">
-                        <div class="profile-image">
-                            <div class="avatar">SA</div>
-                        </div>
-                        <div class="profile-text">
-                            <h2>Hey! I'm Saad</h2>
-                            <p>A 4th semester Web Programming student passionate about creating unique web experiences.</p>
-                            <p>I love combining technical skills with creative problem-solving to build projects that stand out.</p>
-                            <div class="interests">
-                                <h3>Interests:</h3>
-                                <ul>
-                                    <li>Web Development</li>
-                                    <li>Terminal UIs</li>
-                                    <li>Creative Coding</li>
-                                    <li>Open Source</li>
-                                </ul>
-                            </div>
-                        </div>
+      <!-- About Page -->
+      <div id="about-page" class="page">
+        <div class="page-container">
+          <h1>About Me</h1>
+          <div class="content">
+            <div class="profile-section">
+              <div class="profile-image">
+                <div class="avatar">SA</div>
+              </div>
+              <div class="profile-text">
+                <h2>Hey! I'm Saad</h2>
+                <p>
+                  A 4th semester Web Programming student passionate about
+                  creating unique web experiences.
+                </p>
+                <p>
+                  I love combining technical skills with creative
+                  problem-solving to build projects that stand out.
+                </p>
+                <div class="interests">
+                  <h3>Interests:</h3>
+                  <ul>
+                    <li>Web Development</li>
+                    <li>Terminal UIs</li>
+                    <li>Creative Coding</li>
+                    <li>Open Source</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Page -->
+      <div id="skills-page" class="page">
+        <div class="page-container">
+          <h1>Technical Skills</h1>
+          <div class="content">
+            <div class="skills-grid">
+              <div class="skill-category">
+                <h3>Frontend</h3>
+                <ul>
+                  <li>
+                    <span class="skill-bar" style="--width: 90%">HTML5</span>
+                  </li>
+                  <li>
+                    <span class="skill-bar" style="--width: 85%">CSS3</span>
+                  </li>
+                  <li>
+                    <span class="skill-bar" style="--width: 80%"
+                      >JavaScript</span
+                    >
+                  </li>
+                  <li>
+                    <span class="skill-bar" style="--width: 70%">React</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="skill-category">
+                <h3>Backend</h3>
+                <ul>
+                  <li>
+                    <span class="skill-bar" style="--width: 75%">Node.js</span>
+                  </li>
+                  <li>
+                    <span class="skill-bar" style="--width: 70%">Express</span>
+                  </li>
+                  <li>
+                    <span class="skill-bar" style="--width: 65%">MongoDB</span>
+                  </li>
+                  <li>
+                    <span class="skill-bar" style="--width: 60%">SQL</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="skill-category">
+                <h3>Tools & Others</h3>
+                <ul>
+                  <li>
+                    <span class="skill-bar" style="--width: 85%"
+                      >Git & GitHub</span
+                    >
+                  </li>
+                  <li>
+                    <span class="skill-bar" style="--width: 75%">VS Code</span>
+                  </li>
+                  <li>
+                    <span class="skill-bar" style="--width: 70%"
+                      >Linux/Bash</span
+                    >
+                  </li>
+                  <li>
+                    <span class="skill-bar" style="--width: 65%"
+                      >Responsive Design</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Page -->
+      <div id="projects-page" class="page">
+        <div class="page-container">
+          <h1>My Projects</h1>
+          <div class="content">
+            <div class="projects-grid">
+              <div class="project-card" data-project="project1">
+                <div class="project-image">
+                  <div class="placeholder-img">P1</div>
+                </div>
+                <h3>E-Commerce Platform</h3>
+                <p>
+                  Full-stack online store with cart, payments, and admin panel
+                </p>
+                <div class="tech-tags">
+                  <span>React</span>
+                  <span>Node.js</span>
+                  <span>MongoDB</span>
+                </div>
+                <button
+                  class="view-btn"
+                  onclick="navigateToProject('project1')"
+                >
+                  cd project1 →
+                </button>
+              </div>
+              <div class="project-card" data-project="project2">
+                <div class="project-image">
+                  <div class="placeholder-img">P2</div>
+                </div>
+                <h3>Weather Dashboard</h3>
+                <p>Real-time weather app with API integration and forecast</p>
+                <div class="tech-tags">
+                  <span>JavaScript</span>
+                  <span>API</span>
+                  <span>CSS3</span>
+                </div>
+                <button
+                  class="view-btn"
+                  onclick="navigateToProject('project2')"
+                >
+                  cd project2 →
+                </button>
+              </div>
+              <div class="project-card" data-project="project3">
+                <div class="project-image">
+                  <div class="placeholder-img">P3</div>
+                </div>
+                <h3>Task Manager</h3>
+                <p>Productivity app with drag-and-drop and local storage</p>
+                <div class="tech-tags">
+                  <span>Vanilla JS</span>
+                  <span>LocalStorage</span>
+                  <span>UI/UX</span>
+                </div>
+                <button
+                  class="view-btn"
+                  onclick="navigateToProject('project3')"
+                >
+                  cd project3 →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Individual Project Pages -->
+      <div id="project1-page" class="page project-detail">
+        <div class="page-container">
+          <h1>E-Commerce Platform</h1>
+          <div class="content">
+            <div class="project-detail-content">
+              <div class="project-showcase">
+                <div class="placeholder-img large">Project Screenshot</div>
+              </div>
+              <div class="project-info">
+                <h3>Description</h3>
+                <p>
+                  A full-featured e-commerce platform built from scratch with
+                  user authentication, product management, shopping cart, and
+                  secure checkout.
+                </p>
+
+                <h3>Key Features</h3>
+                <ul>
+                  <li>User authentication & authorization</li>
+                  <li>Product catalog with search & filters</li>
+                  <li>Shopping cart & wishlist</li>
+                  <li>Admin dashboard for management</li>
+                  <li>Responsive design</li>
+                </ul>
+
+                <h3>Technologies Used</h3>
+                <div class="tech-tags">
+                  <span>React</span>
+                  <span>Node.js</span>
+                  <span>Express</span>
+                  <span>MongoDB</span>
+                  <span>JWT</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="#" class="btn">View Live</a>
+                  <a href="#" class="btn secondary">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="project2-page" class="page project-detail">
+        <div class="page-container">
+          <h1>Weather Dashboard</h1>
+          <div class="content">
+            <div class="project-detail-content">
+              <div class="project-showcase">
+                <div class="placeholder-img large">Project Screenshot</div>
+              </div>
+              <div class="project-info">
+                <h3>Description</h3>
+                <p>
+                  A beautiful weather dashboard that provides real-time weather
+                  information, forecasts, and weather alerts for any location.
+                </p>
+
+                <h3>Key Features</h3>
+                <ul>
+                  <li>Current weather conditions</li>
+                  <li>7-day forecast</li>
+                  <li>Location search</li>
+                  <li>Weather animations</li>
+                  <li>Responsive design</li>
+                </ul>
+
+                <h3>Technologies Used</h3>
+                <div class="tech-tags">
+                  <span>JavaScript</span>
+                  <span>Weather API</span>
+                  <span>CSS3</span>
+                  <span>HTML5</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="#" class="btn">View Live</a>
+                  <a href="#" class="btn secondary">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="project3-page" class="page project-detail">
+        <div class="page-container">
+          <h1>Task Manager</h1>
+          <div class="content">
+            <div class="project-detail-content">
+              <div class="project-showcase">
+                <div class="placeholder-img large">Project Screenshot</div>
+              </div>
+              <div class="project-info">
+                <h3>Description</h3>
+                <p>
+                  An intuitive task management application with drag-and-drop
+                  functionality, priority levels, and deadline tracking.
+                </p>
+
+                <h3>Key Features</h3>
+                <ul>
+                  <li>Drag-and-drop task organization</li>
+                  <li>Priority levels & categories</li>
+                  <li>Deadline reminders</li>
+                  <li>LocalStorage persistence</li>
+                  <li>Clean, minimal UI</li>
+                </ul>
+
+                <h3>Technologies Used</h3>
+                <div class="tech-tags">
+                  <span>Vanilla JavaScript</span>
+                  <span>LocalStorage API</span>
+                  <span>CSS Grid</span>
+                  <span>Drag & Drop API</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="#" class="btn">View Live</a>
+                  <a href="#" class="btn secondary">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Page -->
+      <div id="contact-page" class="page">
+        <div class="page-container">
+          <h1>Get In Touch</h1>
+          <div class="content">
+            <div class="contact-content">
+              <div class="contact-info">
+                <h3>Let's Connect</h3>
+                <p>
+                  Feel free to reach out for collaborations, opportunities, or
+                  just to say hi!
+                </p>
+
+                <div class="contact-methods">
+                  <div class="contact-item">
+                    <span class="icon">📧</span>
+                    <div>
+                      <h4>Email</h4>
+                      <a href="mailto:saad@example.com">saad@example.com</a>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Skills Page -->
-        <div id="skills-page" class="page">
-            <div class="page-container">
-                <h1>Technical Skills</h1>
-                <div class="content">
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h3>Frontend</h3>
-                            <ul>
-                                <li><span class="skill-bar" style="--width: 90%">HTML5</span></li>
-                                <li><span class="skill-bar" style="--width: 85%">CSS3</span></li>
-                                <li><span class="skill-bar" style="--width: 80%">JavaScript</span></li>
-                                <li><span class="skill-bar" style="--width: 70%">React</span></li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Backend</h3>
-                            <ul>
-                                <li><span class="skill-bar" style="--width: 75%">Node.js</span></li>
-                                <li><span class="skill-bar" style="--width: 70%">Express</span></li>
-                                <li><span class="skill-bar" style="--width: 65%">MongoDB</span></li>
-                                <li><span class="skill-bar" style="--width: 60%">SQL</span></li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Tools & Others</h3>
-                            <ul>
-                                <li><span class="skill-bar" style="--width: 85%">Git & GitHub</span></li>
-                                <li><span class="skill-bar" style="--width: 75%">VS Code</span></li>
-                                <li><span class="skill-bar" style="--width: 70%">Linux/Bash</span></li>
-                                <li><span class="skill-bar" style="--width: 65%">Responsive Design</span></li>
-                            </ul>
-                        </div>
+                  </div>
+                  <div class="contact-item">
+                    <span class="icon">💼</span>
+                    <div>
+                      <h4>LinkedIn</h4>
+                      <a href="https://linkedin.com/in/saad" target="_blank"
+                        >linkedin.com/in/saad</a
+                      >
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Projects Page -->
-        <div id="projects-page" class="page">
-            <div class="page-container">
-                <h1>My Projects</h1>
-                <div class="content">
-                    <div class="projects-grid">
-                        <div class="project-card" data-project="project1">
-                            <div class="project-image">
-                                <div class="placeholder-img">P1</div>
-                            </div>
-                            <h3>E-Commerce Platform</h3>
-                            <p>Full-stack online store with cart, payments, and admin panel</p>
-                            <div class="tech-tags">
-                                <span>React</span>
-                                <span>Node.js</span>
-                                <span>MongoDB</span>
-                            </div>
-                            <button class="view-btn" onclick="navigateToProject('project1')">cd project1 →</button>
-                        </div>
-                        <div class="project-card" data-project="project2">
-                            <div class="project-image">
-                                <div class="placeholder-img">P2</div>
-                            </div>
-                            <h3>Weather Dashboard</h3>
-                            <p>Real-time weather app with API integration and forecast</p>
-                            <div class="tech-tags">
-                                <span>JavaScript</span>
-                                <span>API</span>
-                                <span>CSS3</span>
-                            </div>
-                            <button class="view-btn" onclick="navigateToProject('project2')">cd project2 →</button>
-                        </div>
-                        <div class="project-card" data-project="project3">
-                            <div class="project-image">
-                                <div class="placeholder-img">P3</div>
-                            </div>
-                            <h3>Task Manager</h3>
-                            <p>Productivity app with drag-and-drop and local storage</p>
-                            <div class="tech-tags">
-                                <span>Vanilla JS</span>
-                                <span>LocalStorage</span>
-                                <span>UI/UX</span>
-                            </div>
-                            <button class="view-btn" onclick="navigateToProject('project3')">cd project3 →</button>
-                        </div>
+                  </div>
+                  <div class="contact-item">
+                    <span class="icon">🐙</span>
+                    <div>
+                      <h4>GitHub</h4>
+                      <a href="https://github.com/saad" target="_blank"
+                        >github.com/saad</a
+                      >
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Individual Project Pages -->
-        <div id="project1-page" class="page project-detail">
-            <div class="page-container">
-                <h1>E-Commerce Platform</h1>
-                <div class="content">
-                    <div class="project-detail-content">
-                        <div class="project-showcase">
-                            <div class="placeholder-img large">Project Screenshot</div>
-                        </div>
-                        <div class="project-info">
-                            <h3>Description</h3>
-                            <p>A full-featured e-commerce platform built from scratch with user authentication, product management, shopping cart, and secure checkout.</p>
-                            
-                            <h3>Key Features</h3>
-                            <ul>
-                                <li>User authentication & authorization</li>
-                                <li>Product catalog with search & filters</li>
-                                <li>Shopping cart & wishlist</li>
-                                <li>Admin dashboard for management</li>
-                                <li>Responsive design</li>
-                            </ul>
-
-                            <h3>Technologies Used</h3>
-                            <div class="tech-tags">
-                                <span>React</span>
-                                <span>Node.js</span>
-                                <span>Express</span>
-                                <span>MongoDB</span>
-                                <span>JWT</span>
-                            </div>
-
-                            <div class="project-links">
-                                <a href="#" class="btn">View Live</a>
-                                <a href="#" class="btn secondary">GitHub</a>
-                            </div>
-                        </div>
+                  </div>
+                  <div class="contact-item">
+                    <span class="icon">🐦</span>
+                    <div>
+                      <h4>Twitter</h4>
+                      <a href="https://twitter.com/saad" target="_blank"
+                        >@saad</a
+                      >
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-
-        <div id="project2-page" class="page project-detail">
-            <div class="page-container">
-                <h1>Weather Dashboard</h1>
-                <div class="content">
-                    <div class="project-detail-content">
-                        <div class="project-showcase">
-                            <div class="placeholder-img large">Project Screenshot</div>
-                        </div>
-                        <div class="project-info">
-                            <h3>Description</h3>
-                            <p>A beautiful weather dashboard that provides real-time weather information, forecasts, and weather alerts for any location.</p>
-                            
-                            <h3>Key Features</h3>
-                            <ul>
-                                <li>Current weather conditions</li>
-                                <li>7-day forecast</li>
-                                <li>Location search</li>
-                                <li>Weather animations</li>
-                                <li>Responsive design</li>
-                            </ul>
-
-                            <h3>Technologies Used</h3>
-                            <div class="tech-tags">
-                                <span>JavaScript</span>
-                                <span>Weather API</span>
-                                <span>CSS3</span>
-                                <span>HTML5</span>
-                            </div>
-
-                            <div class="project-links">
-                                <a href="#" class="btn">View Live</a>
-                                <a href="#" class="btn secondary">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="project3-page" class="page project-detail">
-            <div class="page-container">
-                <h1>Task Manager</h1>
-                <div class="content">
-                    <div class="project-detail-content">
-                        <div class="project-showcase">
-                            <div class="placeholder-img large">Project Screenshot</div>
-                        </div>
-                        <div class="project-info">
-                            <h3>Description</h3>
-                            <p>An intuitive task management application with drag-and-drop functionality, priority levels, and deadline tracking.</p>
-                            
-                            <h3>Key Features</h3>
-                            <ul>
-                                <li>Drag-and-drop task organization</li>
-                                <li>Priority levels & categories</li>
-                                <li>Deadline reminders</li>
-                                <li>LocalStorage persistence</li>
-                                <li>Clean, minimal UI</li>
-                            </ul>
-
-                            <h3>Technologies Used</h3>
-                            <div class="tech-tags">
-                                <span>Vanilla JavaScript</span>
-                                <span>LocalStorage API</span>
-                                <span>CSS Grid</span>
-                                <span>Drag & Drop API</span>
-                            </div>
-
-                            <div class="project-links">
-                                <a href="#" class="btn">View Live</a>
-                                <a href="#" class="btn secondary">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Contact Page -->
-        <div id="contact-page" class="page">
-            <div class="page-container">
-                <h1>Get In Touch</h1>
-                <div class="content">
-                    <div class="contact-content">
-                        <div class="contact-info">
-                            <h3>Let's Connect</h3>
-                            <p>Feel free to reach out for collaborations, opportunities, or just to say hi!</p>
-                            
-                            <div class="contact-methods">
-                                <div class="contact-item">
-                                    <span class="icon">📧</span>
-                                    <div>
-                                        <h4>Email</h4>
-                                        <a href="mailto:saad@example.com">saad@example.com</a>
-                                    </div>
-                                </div>
-                                <div class="contact-item">
-                                    <span class="icon">💼</span>
-                                    <div>
-                                        <h4>LinkedIn</h4>
-                                        <a href="https://linkedin.com/in/saad" target="_blank">linkedin.com/in/saad</a>
-                                    </div>
-                                </div>
-                                <div class="contact-item">
-                                    <span class="icon">🐙</span>
-                                    <div>
-                                        <h4>GitHub</h4>
-                                        <a href="https://github.com/saad" target="_blank">github.com/saad</a>
-                                    </div>
-                                </div>
-                                <div class="contact-item">
-                                    <span class="icon">🐦</span>
-                                    <div>
-                                        <h4>Twitter</h4>
-                                        <a href="https://twitter.com/saad" target="_blank">@saad</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
 
     <!-- Terminal (Fixed at bottom) -->
     <div id="terminal">
-        <div id="terminal-output"></div>
-        <div id="terminal-input-line">
-            <span id="prompt">saad@portfolio:~$</span>
-            <input type="text" id="terminal-input" autofocus autocomplete="off" spellcheck="false">
-        </div>
+      <div id="terminal-output"></div>
+      <div id="terminal-input-line">
+        <span id="prompt">saad@portfolio:~$</span>
+        <input
+          type="text"
+          id="terminal-input"
+          autofocus
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
