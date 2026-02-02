@@ -49,11 +49,7 @@ const fileSystem = {
       projects: {
         type: "dir",
         page: "projects-page",
-        children: {
-          project1: { type: "dir", page: "project1-page", children: {} },
-          project2: { type: "dir", page: "project2-page", children: {} },
-          project3: { type: "dir", page: "project3-page", children: {} },
-        },
+        children: {},
       },
       contact: { type: "dir", page: "contact-page", children: {} },
     },
