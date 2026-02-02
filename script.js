@@ -4,6 +4,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const bootScreen = document.getElementById("boot-screen");
 
   if (!hasBooted) {
+    // Show welcome message in terminal
+    showWelcomeBanner();
+
     // Show boot sequence for 3.5 seconds
     setTimeout(() => {
       bootScreen.classList.add("hidden");
@@ -18,6 +21,26 @@ window.addEventListener("DOMContentLoaded", () => {
     bootScreen.classList.add("hidden");
   }
 });
+
+// ===== WELCOME BANNER =====
+function showWelcomeBanner() {
+  const banner = `
+<span style="color: #61afef;">╔══════════════════════════════════════════════════════════╗</span>
+<span style="color: #61afef;">║</span>   <span style="color: #00ff00; font-weight: bold;">███████╗ █████╗  █████╗ ██████╗</span>                      <span style="color: #61afef;">║</span>
+<span style="color: #61afef;">║</span>   <span style="color: #00ff00; font-weight: bold;">██╔════╝██╔══██╗██╔══██╗██╔══██╗</span>                     <span style="color: #61afef;">║</span>
+<span style="color: #61afef;">║</span>   <span style="color: #00ff00; font-weight: bold;">███████╗███████║███████║██║  ██║</span>                     <span style="color: #61afef;">║</span>
+<span style="color: #61afef;">║</span>   <span style="color: #00ff00; font-weight: bold;">╚════██║██╔══██║██╔══██║██║  ██║</span>                     <span style="color: #61afef;">║</span>
+<span style="color: #61afef;">║</span>   <span style="color: #00ff00; font-weight: bold;">███████║██║  ██║██║  ██║██████╔╝</span>                     <span style="color: #61afef;">║</span>
+<span style="color: #61afef;">║</span>   <span style="color: #00ff00; font-weight: bold;">╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝</span>                      <span style="color: #61afef;">║</span>
+<span style="color: #61afef;">║</span>                                                          <span style="color: #61afef;">║</span>
+<span style="color: #61afef;">║</span>   <span style="color: #ffff00;">Welcome to my Terminal-Based Portfolio!</span>                <span style="color: #61afef;">║</span>
+<span style="color: #61afef;">║</span>   Type <span style="color: #98c379;">'help'</span> to see available commands                  <span style="color: #61afef;">║</span>
+<span style="color: #61afef;">║</span>   Type <span style="color: #98c379;">'ls'</span> to explore sections                          <span style="color: #61afef;">║</span>
+<span style="color: #61afef;">║</span>                                                          <span style="color: #61afef;">║</span>
+<span style="color: #61afef;">╚══════════════════════════════════════════════════════════╝</span>
+  `;
+  terminal.output.innerHTML = banner;
+}
 
 // ===== STATE MANAGEMENT =====
 let currentPath = ["~"];
@@ -542,6 +565,47 @@ terminal.input.addEventListener("keydown", (e) => {
 document.addEventListener("click", (e) => {
   if (!e.target.closest("#terminal-input")) {
     terminal.input.focus();
+  }
+});
+
+// ===== TERMINAL RESIZE FUNCTIONALITY =====
+const terminalElement = document.getElementById("terminal");
+const resizeHandle = document.getElementById("terminal-resize-handle");
+let isResizing = false;
+let startY = 0;
+let startHeight = 0;
+
+// Load saved terminal height
+const savedHeight = localStorage.getItem("terminalHeight");
+if (savedHeight) {
+  terminalElement.style.height = savedHeight + "px";
+}
+
+resizeHandle.addEventListener("mousedown", (e) => {
+  isResizing = true;
+  startY = e.clientY;
+  startHeight = terminalElement.offsetHeight;
+  document.body.style.cursor = "ns-resize";
+  e.preventDefault();
+});
+
+document.addEventListener("mousemove", (e) => {
+  if (!isResizing) return;
+
+  const deltaY = startY - e.clientY;
+  const newHeight = Math.max(
+    120,
+    Math.min(window.innerHeight * 0.6, startHeight + deltaY),
+  );
+  terminalElement.style.height = newHeight + "px";
+});
+
+document.addEventListener("mouseup", () => {
+  if (isResizing) {
+    isResizing = false;
+    document.body.style.cursor = "";
+    // Save terminal height
+    localStorage.setItem("terminalHeight", terminalElement.offsetHeight);
   }
 });
 

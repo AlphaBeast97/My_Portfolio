@@ -643,9 +643,36 @@ body {
   font-family: "Courier New", monospace;
   font-size: 1rem;
   height: 180px;
+  min-height: 120px;
+  max-height: 60vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  resize: vertical;
+  position: relative;
+}
+
+#terminal-resize-handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 12px;
+  color: var(--text-green);
+  text-align: center;
+  font-size: 8px;
+  line-height: 12px;
+  cursor: ns-resize;
+  user-select: none;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  letter-spacing: 2px;
+}
+
+#terminal-resize-handle:hover {
+  opacity: 1;
+  background: rgba(0, 255, 0, 0.1);
 }
 
 #terminal-output {
