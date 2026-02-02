@@ -118,37 +118,36 @@ PAGE CHANGES → Shows project1 details page
 
 **Terminal UI (~1.5 hours):**
 
-- [ ] Terminal fixed at bottom of screen
-- [ ] Takes up ~150px height
-- [ ] Input field for commands
-- [ ] Small output area (shows last 3-4 lines)
-- [ ] `clear` clears output
-- [ ] Green text, black background
+- [✅] Terminal fixed at bottom of screen
+- [✅] Takes up ~150px height
+- [✅] Input field for commands
+- [✅] Small output area (shows last 3-4 lines)
+- [✅] `clear` clears output
+- [✅] Green text, black background
 
 **Page Router (~2 hours):**
 
-- [ ] Filesystem object maps paths to pages
-- [ ] `cd about` → shows About page content above terminal
-- [ ] `cd projects` → shows Projects page
-- [ ] `cd ..` → goes back to parent page
-- [ ] `ls` → shows available pages in current dir
-- [ ] `pwd` → shows current path
-- [ ] Smooth page transitions
+- [✅] Filesystem object maps paths to pages
+- [✅] `cd about` → shows About page content above terminal
+- [✅] `cd projects` → shows Projects page
+- [✅] `cd ..` → goes back to parent page
+- [✅] `ls` → shows available pages in current dir
+- [✅] `pwd` → shows current path
+- [✅] Smooth page transitions
 
 **Content Pages (~2 hours):**
 
-- [ ] **Home page** (landing, intro)
-- [ ] **About page** (bio)
-- [ ] **Skills page** (tech stack)
-- [ ] **Projects page** (portfolio grid)
-- [ ] **Individual project pages** (cd projects/project1)
-- [ ] **Contact page** (email, socials)
+- [✅] **Home page** (landing, intro)
+- [✅] **About page** (bio)
+- [✅] **Skills page** (tech stack)
+- [✅] **Projects page** (portfolio grid)
+- [✅] **Contact page** (email, socials)
 
 **Help System (~30 min):**
 
-- [ ] `help` lists commands
-- [ ] Welcome message on load
-- [ ] Error messages for invalid commands
+- [✅] `help` lists commands
+- [✅] Welcome message on load
+- [✅] Error messages for invalid commands
 
 ---
 
@@ -231,15 +230,6 @@ about  skills  projects  contact
 saad@portfolio:~$ cd projects
 # PAGE CHANGES → Shows portfolio grid
 
-saad@portfolio:~/projects$ ls
-project1  project2  project3
-
-saad@portfolio:~/projects$ cd project1
-# PAGE CHANGES → Shows project1 details
-
-saad@portfolio:~/projects/project1$ cd ..
-# PAGE CHANGES → Back to portfolio grid
-
 saad@portfolio:~/projects$ cd ..
 # PAGE CHANGES → Back to home
 ```
@@ -285,29 +275,27 @@ saad@portfolio:~/projects$ cd ..
 
 ### Functional Tests:
 
-- [ ] All commands execute correctly
-- [ ] Navigation works (cd, pwd, ls)
-- [ ] File display works (cat)
-- [ ] History navigation (↑↓)
-- [ ] Autocomplete works
-- [ ] Error handling for invalid commands
-- [ ] Content renders correctly
+- [✅] All commands execute correctly
+- [✅] Navigation works (cd, pwd, ls)
+- [✅] History navigation (↑↓)
+- [✅] Error handling for invalid commands
+- [✅] Content renders correctly
 
 ### Browser Tests:
 
-- [ ] Works on Chrome
-- [ ] Works on Firefox
-- [ ] Works on Safari
-- [ ] Mobile responsive
-- [ ] Touch input works
+- [✅] Works on Chrome
+- [✅] Works on Firefox
+- [✅] Works on Safari
+- [✅] Mobile responsive
+- [✅] Touch input works
 
 ### Edge Cases:
 
-- [ ] Handle invalid paths
-- [ ] Handle empty input
-- [ ] Handle special characters
-- [ ] Handle rapid input
-- [ ] Handle network failures (API calls)
+- [✅] Handle invalid paths
+- [✅] Handle empty input
+- [✅] Handle special characters
+- [✅] Handle rapid input
+- [✅] Handle network failures (API calls)
 
 ---
 
@@ -373,12 +361,6 @@ saad@portfolio:~/projects$ cd ..
 
 **Total: 8 hours (one work day)**
 
-If you have LESS than 8 hours:
-
-- Skip mobile optimization
-- Skip ASCII banner
-- Focus ONLY on hours 1-6
-
 ---
 
 ## 🎓 Presentation Strategy (Quick Demo)
@@ -387,8 +369,8 @@ If you have LESS than 8 hours:
 
 1. **Show terminal** - "This is my portfolio as a terminal"
 2. **Run `help`** - "These are the available commands"
-3. **Navigate**: `ls` → `cd projects` → `ls` → `cat project1.txt`
-4. **Show content**: `cd ..` → `cat about.txt`
+3. **Navigate**: `ls` → `cd projects`
+4. **Show content**: `cd ..`
 5. **Explain**: "Simulated filesystem, command parsing, all vanilla JS"
 
 ### Key Talking Points (15 seconds):

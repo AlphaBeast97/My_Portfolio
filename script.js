@@ -136,12 +136,6 @@ function changePage(pageName) {
   navigateTo(pageName);
 }
 
-// Helper function for project navigation (called from HTML buttons)
-function navigateToProject(projectName) {
-  terminal.input.value = `cd ${projectName}`;
-  handleCommand(`cd ${projectName}`);
-}
-
 // ===== CERTIFICATES LOADING =====
 function loadCertificates() {
   const container = document.getElementById("certificates-container");
