@@ -1,0 +1,47 @@
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  #content-area {
+    padding: 20px 15px;
+  }
+
+  .page h1 {
+    font-size: 2rem;
+  }
+
+  #home-page h1 {
+    font-size: 2.5rem;
+  }
+
+  .profile-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .avatar {
+    width: 150px;
+    height: 150px;
+    font-size: 3rem;
+  }
+
+  .interests ul {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-detail-content {
+    grid-template-columns: 1fr;
+  }
+
+  #terminal {
+    height: 150px;
+    font-size: 0.9rem;
+  }
+}

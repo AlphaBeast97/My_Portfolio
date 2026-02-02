@@ -1,0 +1,28 @@
+/* ===== BASE STYLES & VARIABLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --terminal-bg: #0c0c0c;
+  --text-primary: #e0e0e0;
+  --text-green: #00ff00;
+  --text-blue: #61afef;
+  --text-red: #ff4444;
+  --text-yellow: #ffff00;
+  --border-color: #333;
+}
+
+body {
+  font-family: "Courier New", "Consolas", monospace;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}

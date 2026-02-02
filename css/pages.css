@@ -1,0 +1,259 @@
+/* ===== ABOUT PAGE ===== */
+.profile-section {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.profile-image {
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--text-green), var(--text-blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--bg-primary);
+  border: 3px solid var(--text-green);
+}
+
+.profile-text {
+  flex: 1;
+}
+
+.interests ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.interests li:before {
+  content: "▹ ";
+  color: var(--text-green);
+  font-weight: bold;
+}
+
+/* ===== SKILLS PAGE ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.skill-category ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.skill-category li {
+  margin-bottom: 1rem;
+}
+
+.skill-bar {
+  display: block;
+  background: var(--bg-secondary);
+  padding: 0.5rem;
+  position: relative;
+  border-left: 3px solid var(--text-green);
+}
+
+.skill-bar:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: var(--width);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 255, 0, 0.2),
+    rgba(0, 255, 0, 0.05)
+  );
+  z-index: -1;
+}
+
+/* ===== EXPERIENCE PAGE ===== */
+.timeline {
+  position: relative;
+  padding-left: 3rem;
+  margin-top: 2rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--text-green);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -3.4rem;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--text-green);
+  border: 3px solid var(--bg-primary);
+}
+
+.timeline-date {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: rgba(0, 255, 0, 0.1);
+  color: var(--text-green);
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-content h4 {
+  color: var(--text-blue);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.timeline-content ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.timeline-content ul li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content ul li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--text-green);
+  font-weight: bold;
+}
+
+/* ===== CERTIFICATIONS PAGE ===== */
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.cert-card {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+  text-align: center;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--text-green);
+}
+
+.cert-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.cert-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.cert-issuer {
+  color: var(--text-blue);
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.cert-date {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.cert-desc {
+  color: #aaa;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ===== CONTACT PAGE ===== */
+.contact-content {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.contact-methods {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--text-green);
+}
+
+.contact-item .icon {
+  font-size: 2rem;
+}
+
+.contact-item h4 {
+  margin-bottom: 0.3rem;
+  color: var(--text-green);
+}
+
+.contact-item a {
+  color: var(--text-blue);
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  color: var(--text-green);
+}

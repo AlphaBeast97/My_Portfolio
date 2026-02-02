@@ -1,0 +1,121 @@
+/* ===== TERMINAL ===== */
+#terminal {
+  background: var(--terminal-bg);
+  border-top: 2px solid var(--text-green);
+  padding: 1rem;
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+  height: 180px;
+  min-height: 120px;
+  max-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  resize: vertical;
+  position: relative;
+}
+
+#terminal-resize-handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 12px;
+  color: var(--text-green);
+  text-align: center;
+  font-size: 8px;
+  line-height: 12px;
+  cursor: ns-resize;
+  user-select: none;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  letter-spacing: 2px;
+}
+
+#terminal-resize-handle:hover {
+  opacity: 1;
+  background: rgba(0, 255, 0, 0.1);
+}
+
+#terminal-output {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 0.5rem;
+  color: var(--text-green);
+  line-height: 1.5;
+}
+
+#terminal-output::-webkit-scrollbar {
+  width: 8px;
+}
+
+#terminal-output::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+#terminal-output::-webkit-scrollbar-thumb {
+  background: var(--text-green);
+}
+
+.terminal-line {
+  margin-bottom: 0.3rem;
+}
+
+.terminal-line.error {
+  color: var(--text-red);
+}
+
+.terminal-line.info {
+  color: var(--text-blue);
+}
+
+.terminal-line.success {
+  color: var(--text-green);
+}
+
+.terminal-line.warning {
+  color: var(--text-yellow);
+}
+
+#terminal-input-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#prompt {
+  color: var(--text-blue);
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+#terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-green);
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  caret-color: var(--text-green);
+}
+
+#terminal-input::selection {
+  background: var(--text-green);
+  color: var(--bg-primary);
+}
+
+/* File/Folder styling in terminal output */
+.file {
+  color: var(--text-primary);
+}
+
+.folder {
+  color: var(--text-blue);
+  font-weight: bold;
+}
+
+.folder:after {
+  content: "/";
+}
