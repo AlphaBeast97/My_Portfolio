@@ -3,6 +3,36 @@ let currentPath = ["~"];
 let commandHistory = [];
 let historyIndex = -1;
 
+// ===== CERTIFICATES DATA =====
+// To add a new certificate:
+// 1. Add image to assets/images/ folder (name it 2.jpg, 3.jpg, etc.)
+// 2. Add new object to this array with imageId matching the filename
+const certificates = [
+  {
+    id: 1,
+    imageId: "1", // Will load assets/images/1.jpg (or .png)
+    title: "Full-Stack Development Internship",
+    issuer: "Remote Internship Certificate",
+    date: "2024-2025 (1 Month)",
+    description:
+      "Completed remote full-stack development internship with hands-on experience in modern web technologies",
+    status: "certified",
+    icon: "💼",
+  },
+  {
+    id: 2,
+    imageId: null, // No image for in-progress items
+    title: "BS-Information Engineering Technology",
+    issuer: "University of Lahore",
+    date: "In Progress (4th Semester)",
+    description:
+      "Focus on modern web technologies, software engineering, and system design",
+    status: "in-progress",
+    icon: "🎓",
+  },
+  // Add more certificates here following the same format
+];
+
 // ===== FILESYSTEM STRUCTURE =====
 const fileSystem = {
   "~": {
@@ -10,7 +40,12 @@ const fileSystem = {
     page: "home-page",
     children: {
       about: { type: "dir", page: "about-page", children: {} },
-      skills: { type: "dir", page: "skills-page", children: {} },
+      experience: { type: "dir", page: "experience-page", children: {} },
+      certifications: {
+        type: "dir",
+        page: "certifications-page",
+        children: {},
+      },
       projects: {
         type: "dir",
         page: "projects-page",
@@ -66,6 +101,19 @@ function navigateTo(path) {
   const targetPage = document.getElementById(path);
   if (targetPage) {
     targetPage.classList.add("active");
+
+    // Auto-scroll to top of content area
+    const contentArea = document.getElementById("content-area");
+    contentArea.scrollTo({ top: 0, behavior: "smooth" });
+
+    // Visual feedback - flash the content area
+    contentArea.classList.add("page-transition");
+    setTimeout(() => {
+      contentArea.classList.remove("page-transition");
+    }, 500);
+
+    // Print confirmation in terminal
+    terminal.print(`→ Loaded: ${path.replace("-page", "")}`, "success");
   }
 }
 
@@ -77,6 +125,72 @@ function changePage(pageName) {
 function navigateToProject(projectName) {
   terminal.input.value = `cd ${projectName}`;
   handleCommand(`cd ${projectName}`);
+}
+
+// ===== CERTIFICATES LOADING =====
+function loadCertificates() {
+  const container = document.getElementById("certificates-container");
+  if (!container) return;
+
+  certificates.forEach((cert) => {
+    const certCard = document.createElement("div");
+    certCard.className = "cert-card";
+
+    // Status badge styling
+    let statusHTML = "";
+    let statusStyle = "";
+    if (cert.status === "certified") {
+      statusHTML = "✓ Certified";
+      statusStyle =
+        "color: var(--text-green); margin-top: 1rem; font-weight: bold;";
+    } else if (cert.status === "in-progress") {
+      statusHTML = "⟳ In Progress";
+      statusStyle =
+        "color: var(--text-yellow); margin-top: 1rem; font-weight: bold;";
+    } else if (cert.status === "planned") {
+      statusHTML = "⧗ Planned";
+      statusStyle = "color: #888; margin-top: 1rem; font-weight: bold;";
+      certCard.style.opacity = "0.6";
+    }
+
+    certCard.innerHTML = `
+      <div class="cert-icon">${cert.icon}</div>
+      <h3>${cert.title}</h3>
+      <p class="cert-issuer">${cert.issuer}</p>
+      <p class="cert-date">${cert.date}</p>
+      <p class="cert-desc">${cert.description}</p>
+      ${
+        cert.imageId
+          ? `
+        <div class="cert-image-preview" style="margin-top: 1rem;">
+          <img src="assets/images/${cert.imageId}.jpg" 
+               alt="${cert.title}" 
+               style="width: 100%; max-width: 300px; border: 2px solid var(--text-green); cursor: pointer;"
+               onclick="viewCertificate('${cert.imageId}')"
+               onerror="this.onerror=null; this.src='assets/images/${cert.imageId}.png';">
+          <p style="font-size: 0.85rem; color: #888; margin-top: 0.5rem;">Click to view full size</p>
+        </div>
+      `
+          : ""
+      }
+      <p style="${statusStyle}">${statusHTML}</p>
+    `;
+
+    container.appendChild(certCard);
+  });
+}
+
+// View certificate in modal/new tab
+function viewCertificate(imageId) {
+  // Try jpg first, fallback to png
+  const imgJpg = `assets/images/${imageId}.jpg`;
+  const imgPng = `assets/images/${imageId}.png`;
+
+  // Open in new tab
+  const img = new Image();
+  img.onload = () => window.open(imgJpg, "_blank");
+  img.onerror = () => window.open(imgPng, "_blank");
+  img.src = imgJpg;
 }
 
 // ===== COMMANDS =====
@@ -291,6 +405,9 @@ document.addEventListener("click", (e) => {
 
 // ===== INITIALIZATION =====
 window.addEventListener("DOMContentLoaded", () => {
+  // Load certificates dynamically
+  loadCertificates();
+
   terminal.print(
     "╔════════════════════════════════════════════════════╗",
     "success",
